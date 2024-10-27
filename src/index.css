@@ -1,16 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: gilroy;
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  html,
+* {
+  color: #fff;
+}
+
   body {
-      height: 100%;
-      width: 100%;
-  }
-  body {
-    color: aliceblue;
     background-color: #111;
   }
