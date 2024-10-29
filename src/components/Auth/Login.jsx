@@ -7,8 +7,11 @@ const [password, setPassword] = useState("");
  
 const submitHandler = (e)=> {
     e.preventDefault()
-    console.log("Hello Guy , from Submitted");
-    
+    console.log("email is ",email);
+    console.log("password is ",password);
+
+    setEmail("");
+    setPassword("");
 }   
 
   return (
@@ -21,9 +24,10 @@ const submitHandler = (e)=> {
                onChange={(e)=>{
                 setEmail(e.target.value)
                }} required className='outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full placeholder:text-gray-400 w-full' type='email' placeholder='Enter your email'/>
-               <input value={password}
+               <input 
+               value={password}
                onChange={(e)=>{
-                setPassword(e.target.value) required className='outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full mt-3 placeholder:text-gray-400 w-full' type='password' placeholder='Enter your password'/>
+                setPassword(e.target.value)}} required className='outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full mt-3 placeholder:text-gray-400 w-full' type='password' placeholder='Enter your password'/>
                <button className='mt-5 text-white border-none outline-none bg-emerald-600 text-xl py-3 px-5 rounded-full w-full'>Log In</button>
           </form>
         </div>
