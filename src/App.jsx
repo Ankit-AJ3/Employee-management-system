@@ -10,13 +10,19 @@ const [user, SetUser] =  useState(null);
 
 const handleLogin = (email, password) => {
     if(email == 'admin@me.com' && password == '12345'){
-      console.log("this is Admin");
-    }else{
-      alert("Invalid Credentials")
+        SetUser('admin')
+        console.log(user);
+ 
+    }else if(email == 'user@me.com' && password == '12345') {
+        SetUser('employee')  
+        console.log(user);    
+    }
+        
+    else{
+         alert("Invalid Credentials")
     }
 }
 
-handleLogin('admin@me.com',12345)
 
   useEffect(()=>{
     // setLocalStorage()
@@ -24,7 +30,7 @@ handleLogin('admin@me.com',12345)
   },)
   return (
     <div> 
-    {!user ? <Login/> : " "}
+    {!user ? <Login handleLogin= {handleLogin}/> : " "}
       {/* <EmployeeDashboard/> */}
       {/* <AdminDashboard/> */}
     </div>
